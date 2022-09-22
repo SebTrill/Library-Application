@@ -1,12 +1,17 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
 namespace Exam1
 {
     public partial class LibraryView : Form
     {
-        /// <summary>
-        /// This is the Library from the cloud.
-        /// </summary>
-        public List<Book> Cloud;
-
         /// <summary>
         /// This is the current library.
         /// </summary>
@@ -15,14 +20,15 @@ namespace Exam1
         /// <summary>
         /// This is the Control reference for the LibraryView class.
         /// </summary>
-        public BookController LibControl;
+        public Controllers.LibraryController LibControl;
 
         /// <summary>
         /// This is the constructor for LibraryView.
         /// </summary>
-        public LibraryView()
+        public LibraryView(Controllers.LibraryController c)
         {
             InitializeComponent();
+            LibControl = c;
         }
 
         /// <summary>

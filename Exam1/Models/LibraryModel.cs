@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exam1
+namespace Exam1.Models
 {
-    public class Library
+    public class LibraryModel
     {
 
     }

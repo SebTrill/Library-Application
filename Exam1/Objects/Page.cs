@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Exam1
+namespace Exam1.Objects
 {
     public class Page
     {
