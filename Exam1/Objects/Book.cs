@@ -20,6 +20,11 @@ namespace Exam1
         public string Author { get; set; }
 
         /// <summary>
+        /// This is the page number of the current page.
+        /// </summary>
+        public int CurrentPage { get; set; }
+
+        /// <summary>
         /// These are the pages of the book.
         /// </summary>
         public List<Page> Pages;

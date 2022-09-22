@@ -49,5 +49,14 @@ namespace Exam1.Controllers
         {
 
         }
+
+        /// <summary>
+        /// This syncs the library.
+        /// </summary>
+        /// <param name="listBooks">This is the library to sync.</param>
+        public void SyncLibrary(List<Book> listBooks)
+        {
+
+        }
     }
 }
