@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vUrBKNn/gVa9cYBYxLNVNMTTQRZjnmhfFZcNpdmkW5OJ4CFHuxsJouSRJPJi7WSf8t9OIYlIKtvBHaJYjhZ0rA==",
+  "dgSpecHash": "CAKfwvlLJCWBxSB1gfUeKmuVr/rKE4BdRoX+Qehfk/4s4PKeCJMzCbL7uQpMOc5UZRFuvaOD5el3H4YJbVgZqA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sgtri\\source\\repos\\Library-Application\\Exam1\\Exam1.csproj",
+  "projectFilePath": "E:\\CIS 501\\E1\\Exam1\\Exam1.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\sgtri\\source\\repos\\Library-Application\\Exam1\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

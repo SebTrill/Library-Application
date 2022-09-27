@@ -40,7 +40,7 @@ namespace Exam1
         /// <param name="e">These are the arguments</param>
         private void next_button_Click(object sender, EventArgs e)
         {
-
+            book_C.FlipPageForward();
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace Exam1
         /// <param name="e">These are the arguments</param>
         private void previous_button_Click(object sender, EventArgs e)
         {
-
+            book_C.FlipPageBack();
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Exam1
         /// <param name="e">These are the arguments</param>
         private void set_bookmark_Click(object sender, EventArgs e)
         {
-
+            book_C.SetBookMark(book_M.book.CurrentPage);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Exam1
         /// <param name="e">These are the arguments</param>
         private void change_page_ValueChanged(object sender, EventArgs e)
         {
-
+            book_C.GoToPage((int)this.change_page.Value);
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace Exam1
         /// <param name="e">These are the arguments</param>
         private void back_button_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

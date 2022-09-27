@@ -25,4 +25,6 @@ namespace Exam1
     }
 
     public delegate void SyncLibraryDelegate(List<Book> listBooks);
+
+    public delegate void HandleEvent(BookModel book, int page);
 }
