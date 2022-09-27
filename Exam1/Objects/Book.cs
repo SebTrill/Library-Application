@@ -13,6 +13,8 @@ namespace Exam1
         /// </summary>
         public int CurrentPage { get; set; }
 
+        public string Title { get; set; }
+
         /// <summary>
         /// These are the pages of the book.
         /// </summary>

@@ -82,5 +82,10 @@ namespace Exam1
         {
             this.Close();
         }
+
+        private void page_panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

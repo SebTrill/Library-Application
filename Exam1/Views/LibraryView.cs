@@ -17,7 +17,7 @@ namespace Exam1
         /// <summary>
         /// This is the current library.
         /// </summary>
-        public List<Book> CurrentLibrary;
+        public BindingList<BookModel> CurrentLibrary;
 
         /// <summary>
         /// This is the Control reference for the LibraryView class.
@@ -36,6 +36,7 @@ namespace Exam1
         {
             InitializeComponent();
             LibControl = c;
+            ux_listBox.DataSource = CurrentLibrary;
         }
 
         /// <summary>
@@ -44,7 +45,7 @@ namespace Exam1
         /// <returns>Returns the book from the library.</returns>
         public Book PickBook()
         {
-            return new Book(new List<string>());
+            return new Book();
         }
 
         /// <summary>
@@ -58,13 +59,13 @@ namespace Exam1
 
         private void OpenBook_Click(object sender, EventArgs e)
         {
-
+            BookModel model = ux_listBox.SelectedItem as BookModel;
+            BookController controller = new BookController(model);
+            BookView view = new BookView(model, controller);
+            controller.SetConstructor(view);
+            view.Show();
         }
 
-        private void booklist_listbox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void synchronize_button_Click(object sender, EventArgs e)
         {
