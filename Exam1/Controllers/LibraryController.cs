@@ -35,7 +35,6 @@ namespace Exam1.Controllers
         /// <param name="libModel">This is the LibraryModel reference.</param>
         public LibraryController(LibraryModel libModel)
         {
-            // this.libView = libView;
             this.libModel = libModel;
             this.libView = new LibraryView(this);
         }
@@ -57,7 +56,7 @@ namespace Exam1.Controllers
         public void OpenBook(Book b, int page)
         {
             BookController c = new BookController(new BookModel(b));
-            BookView v = new BookView(b, c);
+            BookView v = new BookView(new BookModel(b), c);
             c.SetConstructor(v);
         }
 
@@ -67,7 +66,13 @@ namespace Exam1.Controllers
         /// <param name="listBooks">This is the library to sync.</param>
         public void SyncLibrary(List<Book> listBooks)
         {
-
+            foreach (Book b in listBooks)
+            {
+                if (!CurrentLibrary.Contains(b))
+                {
+                    CurrentLibrary.Add(b);
+                }
+            }
         }
     }
 }
