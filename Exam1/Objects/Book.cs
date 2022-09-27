@@ -11,7 +11,7 @@ namespace Exam1
         /// <summary>
         /// This is the page number of the current page.
         /// </summary>
-        public int CurrentPage { get; set; }
+        public int CurrentPage { get; set; } = 0;
 
         public string Title { get; set; }
 

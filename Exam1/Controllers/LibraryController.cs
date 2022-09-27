@@ -30,6 +30,8 @@ namespace Exam1.Controllers
         /// </summary>
         public List<Book> CurrentLibrary = new();
 
+        public List<string> titleList = new();
+
         /// <summary>
         /// This is the constructor of the LibraryController class.
         /// </summary>
@@ -37,7 +39,7 @@ namespace Exam1.Controllers
         public LibraryController(LibraryModel libModel)
         {
             this.libModel = libModel;
-            this.libView = new LibraryView(this);
+            this.libView = new LibraryView(this, SyncLibrary);
         }
 
         public BindingList<BookModel> ReadFile()
@@ -69,7 +71,6 @@ namespace Exam1.Controllers
                 }
                 sr.Close();
             }
-
             return bList;
         }
 
@@ -92,21 +93,19 @@ namespace Exam1.Controllers
             BookController c = new BookController(new BookModel(b, true));
             BookView v = new BookView(new BookModel(b, true), c);
             c.SetConstructor(v);
+            v.book_C.GoToPage(page);
+
+            v.ux_label.Text = v.book_M.book.Pages[v.book_M.book.CurrentPage];
+            v.Show();
         }
 
         /// <summary>
         /// This syncs the library.
         /// </summary>
         /// <param name="listBooks">This is the library to sync.</param>
-        public void SyncLibrary(List<Book> listBooks)
+        public void SyncLibrary(BindingList<BookModel> listBooks)
         {
-            foreach (Book b in listBooks)
-            {
-                if (!CurrentLibrary.Contains(b))
-                {
-                    CurrentLibrary.Add(b);
-                }
-            }
+            foreach (BookModel b in listBooks) if (b.Synced == false) b.Synced = true;
         }
     }
 }

@@ -1,5 +1,6 @@
 using Exam1.Controllers;
 using Exam1.Models;
+using System.ComponentModel;
 
 namespace Exam1
 {
@@ -17,14 +18,14 @@ namespace Exam1
 
             LibraryController c = new LibraryController(new LibraryModel());
             //LibraryView v = new LibraryView(c.SyncLibrary);
-            LibraryView v = new LibraryView(c);
+            LibraryView v = new LibraryView(c, c.SyncLibrary);
             c.SetConstructor(v);
 
             Application.Run(v);
         }
     }
 
-    public delegate void SyncLibraryDelegate(List<Book> listBooks);
+    public delegate void SyncLibraryDelegate(BindingList<BookModel> listBooks);
 
     public delegate void HandleEvent(BookModel book, int page);
 }

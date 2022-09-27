@@ -54,7 +54,11 @@ namespace Exam1
         /// </summary>
         public void FlipPageForward()
         {
-            book_M.book.CurrentPage++;
+            if (book_M.book.Pages.Count > book_M.book.CurrentPage)
+            {
+                book_V.ux_label.Text = book_M.book.Pages[book_M.book.CurrentPage++];
+            }
+            else MessageBox.Show("Bruh theres nothing left to read.");
         }
 
         /// <summary>
@@ -62,7 +66,11 @@ namespace Exam1
         /// </summary>
         public void FlipPageBack()
         {
-            book_M.book.CurrentPage--;
+            if (book_M.book.CurrentPage != 0)
+            {
+                book_V.ux_label.Text = book_M.book.Pages[book_M.book.CurrentPage--];
+            }
+            else MessageBox.Show("Bro, why would you go to a page that doesn't exist.");
         }
 
         /// <summary>
@@ -91,15 +99,5 @@ namespace Exam1
         {
             book_M.book.CurrentPage = i;
         }
-
-        /// <summary>
-        /// Closes the book in the View.
-        /// </summary>
-        /// <returns>Returns the page number (page when closed).</returns>
-        public int CloseBook()
-        {
-            return 0;
-        }
-
     }
 }

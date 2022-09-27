@@ -19,6 +19,8 @@ namespace Exam1
         /// </summary>
         public BindingList<BookModel> CurrentLibrary;
 
+        public List<string> titleList = new();
+
         /// <summary>
         /// This is the Control reference for the LibraryView class.
         /// </summary>
@@ -32,37 +34,36 @@ namespace Exam1
         /// <summary>
         /// This is the constructor for LibraryView.
         /// </summary>
-        public LibraryView(LibraryController c)
+        public LibraryView(LibraryController c, SyncLibraryDelegate colin_sucks)
         {
             InitializeComponent();
             LibControl = c;
-            ux_listBox.DataSource = CurrentLibrary;
+            SyncDel = colin_sucks;
             BindingList<BookModel> list = c.ReadFile();
             CurrentLibrary = list;
-        }
 
-        /// <summary>
-        /// Sync the Library.
-        /// </summary>
-        /// <param name="book_list">This is the list of books to sync.</param>
-        public void Sync(List<Book> book_list)
-        {
-            SyncDel(book_list);
+            foreach (BookModel b in CurrentLibrary) if(b.Synced == true) titleList.Add(b.book.Title);
+            ux_listBox.DataSource = titleList;
         }
 
         private void OpenBook_Click(object sender, EventArgs e)
         {
-            BookModel model = ux_listBox.SelectedItem as BookModel;
+            BookModel model = new(new Book(new List<string>(), ""), true);
+            foreach (BookModel b in CurrentLibrary)
+            {
+                if (b.book.Title == ux_listBox.SelectedItem) model = b;
+            }
             BookController controller = new BookController(model);
             BookView view = new BookView(model, controller);
             controller.SetConstructor(view);
-            view.Show();
+
+            LibControl.OpenBook(model.book, model.book.CurrentPage);
         }
 
 
         private void synchronize_button_Click(object sender, EventArgs e)
         {
-
+            SyncDel(CurrentLibrary);
         }
     }
 }

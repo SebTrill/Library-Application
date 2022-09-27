@@ -21,7 +21,7 @@ namespace Exam1.Models
         /// <summary>
         /// This tells us whether or not the book should be shown in the list.
         /// </summary>
-        private bool Synced { get; set; }
+        public bool Synced { get; set; }
 
         /// <summary>
         /// This is the Book reference.
