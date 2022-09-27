@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Exam1.Models;
 
 namespace Exam1
 {
@@ -15,7 +16,7 @@ namespace Exam1
         /// <summary>
         /// This is the Book reference.
         /// </summary>
-        public Book book_M;
+        public BookModel book_M;
 
         /// <summary>
         /// This is the BookController reference.
@@ -25,7 +26,7 @@ namespace Exam1
         /// <summary>
         /// This is the constructor for the BookView.
         /// </summary>
-        public BookView(Book b, BookController c)
+        public BookView(BookModel b, BookController c)
         {
             InitializeComponent();
             book_M = b;

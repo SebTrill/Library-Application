@@ -3,12 +3,8 @@ using Exam1.Models;
 
 namespace Exam1
 {
-
-    public delegate void SyncLibraryDelegate(List<Book> listBooks); 
-
     internal static class Program
     {
-
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -26,4 +22,6 @@ namespace Exam1
             Application.Run(v);
         }
     }
+
+    public delegate void SyncLibraryDelegate(List<Book> listBooks);
 }

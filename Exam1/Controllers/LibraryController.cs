@@ -28,20 +28,13 @@ namespace Exam1.Controllers
         /// This is the current library.
         /// </summary>
         public List<Book> CurrentLibrary = new();
-        
-        /// <summary>
-        /// Delegate responsible for the SyncLibrary method
-        /// </summary>
-        
 
         /// <summary>
         /// This is the constructor of the LibraryController class.
         /// </summary>
-        /// <param name="libView">This is the LibraryView reference.</param>
         /// <param name="libModel">This is the LibraryModel reference.</param>
         public LibraryController(LibraryModel libModel)
         {
-            // this.libView = libView;
             this.libModel = libModel;
             this.libView = new LibraryView(this);
         }
@@ -49,7 +42,7 @@ namespace Exam1.Controllers
         /// <summary>
         /// This sets the constructor.
         /// </summary>
-        /// <param name="libView">This is the reference to the Library View.</param>
+        /// <param name="lv">This is the reference to the Library View.</param>
         public void SetConstructor(LibraryView lv)
         {
             libView = lv;
@@ -62,7 +55,9 @@ namespace Exam1.Controllers
         /// <param name="page">The page to open the book to.</param>
         public void OpenBook(Book b, int page)
         {
-
+            BookController c = new BookController(new BookModel(b));
+            BookView v = new BookView(new BookModel(b), c);
+            c.SetConstructor(v);
         }
 
         /// <summary>
@@ -71,7 +66,13 @@ namespace Exam1.Controllers
         /// <param name="listBooks">This is the library to sync.</param>
         public void SyncLibrary(List<Book> listBooks)
         {
-            
+            foreach (Book b in listBooks)
+            {
+                if (!CurrentLibrary.Contains(b))
+                {
+                    CurrentLibrary.Add(b);
+                }
+            }
         }
     }
 }

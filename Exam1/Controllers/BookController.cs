@@ -1,5 +1,5 @@
-﻿using Exam1.Models;
-using Exam1.Objects;
+﻿using Exam1.Objects;
+using Exam1.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,12 +35,16 @@ namespace Exam1
         /// </summary>
         /// <param name="v">This is the BookView reference.</param>
         /// <param name="b">This is the Book reference.</param>
-        public BookController(BookView v, BookModel b)
+        public BookController(BookModel b)
         {
-            book_V = v;
+            book_V = new BookView(b, this);
             book_M = b;
         }
 
+        /// <summary>
+        /// This sets the constructor.
+        /// </summary>
+        /// <param name="bv">This is the BookView reference.</param>
         public void SetConstructor(BookView bv)
         {
             book_V = bv;
@@ -51,7 +55,7 @@ namespace Exam1
         /// </summary>
         public void FlipPageForward()
         {
-
+            book_M.book.CurrentPage++;
         }
 
         /// <summary>
@@ -59,7 +63,7 @@ namespace Exam1
         /// </summary>
         public void FlipPageBack()
         {
-
+            book_M.book.CurrentPage--;
         }
 
         /// <summary>
@@ -69,7 +73,7 @@ namespace Exam1
         /// <returns>Return if a bookmark can or can't be created.</returns>
         public bool SetBookMark(int i)
         {
-            if(Bookmarks.Count() < 6)
+            if (Bookmarks.Count() < 6)
             {
                 Bookmarks.Add(i);
                 return true;
@@ -86,17 +90,7 @@ namespace Exam1
         /// <param name="i">This is the page number.</param>
         public void GoToPage(int i)
         {
-
-        }
-
-        /// <summary>
-        /// This opens a book into the View.
-        /// </summary>
-        /// <param name="b">This is the book to open.</param>
-        /// <param name="i">Current page to open book to.</param>
-        public void OpenBook(Book b, int i)
-        {
-
+            book_M.book.CurrentPage = i;
         }
 
         /// <summary>
@@ -106,11 +100,6 @@ namespace Exam1
         public int CloseBook()
         {
             return 0;
-        }
-
-        public void SyncLibrary(Library l)
-        {
-
         }
     }
 }
