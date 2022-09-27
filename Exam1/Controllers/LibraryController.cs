@@ -32,7 +32,6 @@ namespace Exam1.Controllers
         /// <summary>
         /// This is the constructor of the LibraryController class.
         /// </summary>
-        /// <param name="libView">This is the LibraryView reference.</param>
         /// <param name="libModel">This is the LibraryModel reference.</param>
         public LibraryController(LibraryModel libModel)
         {
@@ -44,7 +43,7 @@ namespace Exam1.Controllers
         /// <summary>
         /// This sets the constructor.
         /// </summary>
-        /// <param name="libView">This is the reference to the Library View.</param>
+        /// <param name="lv">This is the reference to the Library View.</param>
         public void SetConstructor(LibraryView lv)
         {
             libView = lv;

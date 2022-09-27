@@ -22,4 +22,6 @@ namespace Exam1
             Application.Run(v);
         }
     }
+
+    public delegate void SyncLibraryDelegate(List<Book> listBooks);
 }
