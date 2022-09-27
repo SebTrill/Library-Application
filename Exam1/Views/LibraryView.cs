@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Exam1.Controllers;
+using Exam1.Models;
 
 namespace Exam1
 {
@@ -20,7 +22,7 @@ namespace Exam1
         /// <summary>
         /// This is the Control reference for the LibraryView class.
         /// </summary>
-        public Controllers.LibraryController LibControl;
+        public LibraryController LibControl;
 
         /// <summary>
         /// The delegate responsible for decoupling the 
@@ -30,10 +32,10 @@ namespace Exam1
         /// <summary>
         /// This is the constructor for LibraryView.
         /// </summary>
-        public LibraryView(SyncLibraryDelegate d)
+        public LibraryView(LibraryController c)
         {
             InitializeComponent();
-            SyncDel = d;
+            LibControl = c;
         }
 
         /// <summary>
@@ -54,7 +56,17 @@ namespace Exam1
             SyncDel(book_list);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void OpenBook_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void booklist_listbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void synchronize_button_Click(object sender, EventArgs e)
         {
 
         }
