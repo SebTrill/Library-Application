@@ -28,6 +28,11 @@ namespace Exam1.Controllers
         /// This is the current library.
         /// </summary>
         public List<Book> CurrentLibrary = new();
+        
+        /// <summary>
+        /// Delegate responsible for the SyncLibrary method
+        /// </summary>
+        
 
         /// <summary>
         /// This is the constructor of the LibraryController class.
@@ -66,7 +71,7 @@ namespace Exam1.Controllers
         /// <param name="listBooks">This is the library to sync.</param>
         public void SyncLibrary(List<Book> listBooks)
         {
-
+            
         }
     }
 }

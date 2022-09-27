@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\zacha\\source\\repos\\Library-Application\\Exam1\\Exam1.csproj": {}
   },
   "projects": {
@@ -13,27 +12,13 @@
         "projectPath": "C:\\Users\\zacha\\source\\repos\\Library-Application\\Exam1\\Exam1.csproj",
         "packagesPath": "C:\\Users\\zacha\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\zacha\\source\\repos\\Library-Application\\Exam1\\obj\\",
-=======
-    "E:\\CIS 501\\E1\\Exam1\\Exam1.csproj": {}
-  },
-  "projects": {
-    "E:\\CIS 501\\E1\\Exam1\\Exam1.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "E:\\CIS 501\\E1\\Exam1\\Exam1.csproj",
-        "projectName": "Exam1",
-        "projectPath": "E:\\CIS 501\\E1\\Exam1\\Exam1.csproj",
-        "packagesPath": "C:\\Users\\odonn\\.nuget\\packages\\",
-        "outputPath": "E:\\CIS 501\\E1\\Exam1\\obj\\",
->>>>>>> 3b877a66aa39eba9285ca02a8a40261eae6df2c6
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\zacha\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-          "C:\\Users\\odonn\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 3b877a66aa39eba9285ca02a8a40261eae6df2c6
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

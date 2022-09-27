@@ -23,12 +23,17 @@ namespace Exam1
         public Controllers.LibraryController LibControl;
 
         /// <summary>
+        /// The delegate responsible for decoupling the 
+        /// </summary>
+        SyncLibraryDelegate SyncDel;
+
+        /// <summary>
         /// This is the constructor for LibraryView.
         /// </summary>
-        public LibraryView(Controllers.LibraryController c)
+        public LibraryView(SyncLibraryDelegate d)
         {
             InitializeComponent();
-            LibControl = c;
+            SyncDel = d;
         }
 
         /// <summary>
@@ -46,7 +51,7 @@ namespace Exam1
         /// <param name="book_list">This is the list of books to sync.</param>
         public void Sync(List<Book> book_list)
         {
-
+            SyncDel(book_list);
         }
 
         private void button1_Click(object sender, EventArgs e)
