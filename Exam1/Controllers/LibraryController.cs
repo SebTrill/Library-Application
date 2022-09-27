@@ -56,7 +56,9 @@ namespace Exam1.Controllers
         /// <param name="page">The page to open the book to.</param>
         public void OpenBook(Book b, int page)
         {
-
+            BookController c = new BookController(new BookModel(b));
+            BookView v = new BookView(b, c);
+            c.SetConstructor(v);
         }
 
         /// <summary>
