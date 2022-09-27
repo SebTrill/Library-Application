@@ -35,10 +35,10 @@ namespace Exam1
         /// </summary>
         /// <param name="v">This is the BookView reference.</param>
         /// <param name="b">This is the Book reference.</param>
-        public BookController(BookView v, BookModel b)
+        public BookController(BookModel b)
         {
-            book_V = v;
             book_M = b;
+            book_V = new BookView(book_M.book, this);
         }
 
         public void SetConstructor(BookView bv)
