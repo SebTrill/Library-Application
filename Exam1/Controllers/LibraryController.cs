@@ -66,6 +66,8 @@ namespace Exam1.Controllers
 
                     Book b = new Book(contentList, title);
                     BookModel bookM = new BookModel(b, synced);
+                    
+                    foreach(string s in bookmarks) bookM.Bookmarks.Add(Convert.ToInt32(s));
 
                     bList.Add(bookM);
                 }
@@ -88,14 +90,15 @@ namespace Exam1.Controllers
         /// </summary>
         /// <param name="b">The book to open.</param>
         /// <param name="page">The page to open the book to.</param>
-        public void OpenBook(Book b, int page)
+        public void OpenBook(BookModel m, int page)
         {
-            BookController c = new BookController(new BookModel(b, true));
-            BookView v = new BookView(new BookModel(b, true), c);
+            BookController c = new BookController(m);
+            BookView v = new BookView(m, c);
             c.SetConstructor(v);
             v.book_C.GoToPage(page);
 
             v.ux_label.Text = v.book_M.book.Pages[v.book_M.book.CurrentPage];
+            v.ux_bookmarkList.DataSource = v.book_M.Bookmarks;
             v.Show();
         }
 

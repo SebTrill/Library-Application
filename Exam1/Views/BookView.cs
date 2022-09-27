@@ -60,7 +60,11 @@ namespace Exam1
         /// <param name="e">These are the arguments</param>
         private void set_bookmark_Click(object sender, EventArgs e)
         {
-            book_C.SetBookMark(book_M.book.CurrentPage);
+            if (book_C.SetBookMark(book_M.book.CurrentPage, book_M) == true)
+            {
+                ux_bookmarkList.DataSource = book_M.Bookmarks;
+            }
+            else MessageBox.Show("Bro, that too many marbles.");
         }
 
         /// <summary>
@@ -70,7 +74,7 @@ namespace Exam1
         /// <param name="e">These are the arguments</param>
         private void change_page_ValueChanged(object sender, EventArgs e)
         {
-            book_C.GoToPage((int)this.change_page.Value);
+            
         }
 
         /// <summary>
@@ -86,6 +90,16 @@ namespace Exam1
         private void page_panel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void ux_GoToPage_Click(object sender, EventArgs e)
+        {
+            book_C.GoToPage((int)change_page.Value);
+        }
+
+        private void ux_GoToBookMark_Click(object sender, EventArgs e)
+        {
+            book_C.GoToPage((int)ux_bookmarkList.SelectedValue);
         }
     }
 }

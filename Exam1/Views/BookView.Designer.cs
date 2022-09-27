@@ -34,6 +34,9 @@
             this.change_page = new System.Windows.Forms.NumericUpDown();
             this.back_button = new System.Windows.Forms.Button();
             this.ux_label = new System.Windows.Forms.Label();
+            this.ux_GoToPage = new System.Windows.Forms.Button();
+            this.ux_GoToBookMark = new System.Windows.Forms.Button();
+            this.ux_bookmarkList = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.change_page)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,11 +104,43 @@
             this.ux_label.TabIndex = 7;
             this.ux_label.Text = "text";
             // 
+            // ux_GoToPage
+            // 
+            this.ux_GoToPage.Location = new System.Drawing.Point(173, 19);
+            this.ux_GoToPage.Name = "ux_GoToPage";
+            this.ux_GoToPage.Size = new System.Drawing.Size(165, 49);
+            this.ux_GoToPage.TabIndex = 8;
+            this.ux_GoToPage.Text = "Go To Page";
+            this.ux_GoToPage.UseVisualStyleBackColor = true;
+            this.ux_GoToPage.Click += new System.EventHandler(this.ux_GoToPage_Click);
+            // 
+            // ux_GoToBookMark
+            // 
+            this.ux_GoToBookMark.Location = new System.Drawing.Point(1251, 340);
+            this.ux_GoToBookMark.Name = "ux_GoToBookMark";
+            this.ux_GoToBookMark.Size = new System.Drawing.Size(165, 49);
+            this.ux_GoToBookMark.TabIndex = 10;
+            this.ux_GoToBookMark.Text = "Go To Page";
+            this.ux_GoToBookMark.UseVisualStyleBackColor = true;
+            this.ux_GoToBookMark.Click += new System.EventHandler(this.ux_GoToBookMark_Click);
+            // 
+            // ux_bookmarkList
+            // 
+            this.ux_bookmarkList.FormattingEnabled = true;
+            this.ux_bookmarkList.ItemHeight = 41;
+            this.ux_bookmarkList.Location = new System.Drawing.Point(1272, 84);
+            this.ux_bookmarkList.Name = "ux_bookmarkList";
+            this.ux_bookmarkList.Size = new System.Drawing.Size(144, 250);
+            this.ux_bookmarkList.TabIndex = 11;
+            // 
             // BookView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1440, 1255);
+            this.Controls.Add(this.ux_bookmarkList);
+            this.Controls.Add(this.ux_GoToBookMark);
+            this.Controls.Add(this.ux_GoToPage);
             this.Controls.Add(this.ux_label);
             this.Controls.Add(this.back_button);
             this.Controls.Add(this.change_page);
@@ -129,5 +164,8 @@
         private NumericUpDown change_page;
         private Button back_button;
         public Label ux_label;
+        private Button ux_GoToPage;
+        private Button ux_GoToBookMark;
+        public ListBox ux_bookmarkList;
     }
 }

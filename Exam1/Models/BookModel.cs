@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace Exam1.Models
         /// <summary>
         /// This is the list of bookmarks.
         /// </summary>
-        private List<int> Bookmarks = new List<int>(5);
+        public BindingList<int> Bookmarks = new BindingList<int>();
 
         /// <summary>
         /// This is the saved page number.

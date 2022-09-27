@@ -57,7 +57,7 @@ namespace Exam1
             BookView view = new BookView(model, controller);
             controller.SetConstructor(view);
 
-            LibControl.OpenBook(model.book, model.book.CurrentPage);
+            LibControl.OpenBook(model, model.book.CurrentPage);
         }
 
 

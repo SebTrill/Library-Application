@@ -17,7 +17,7 @@ namespace Exam1
         /// <summary>
         /// This is the Book class reference (AKA the Book Model).
         /// </summary>
-        private BookModel book_M;
+        public BookModel book_M;
 
         /// <summary>
         /// This is the list integers that represent the bookmarks (page numbers).
@@ -78,17 +78,14 @@ namespace Exam1
         /// </summary>
         /// <param name="i">This is the page number.</param>
         /// <returns>Return if a bookmark can or can't be created.</returns>
-        public bool SetBookMark(int i)
+        public bool SetBookMark(int i, BookModel m)
         {
-            if (Bookmarks.Count() < 6)
+            if (m.Bookmarks.Count() < 6)
             {
-                Bookmarks.Add(i);
+                m.Bookmarks.Add(i);
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            else return false;
         }
 
         /// <summary>
@@ -97,7 +94,14 @@ namespace Exam1
         /// <param name="i">This is the page number.</param>
         public void GoToPage(int i)
         {
-            book_M.book.CurrentPage = i;
+
+            if (book_M.book.Pages.Count > i && i >= 0)
+            {
+                book_M.book.CurrentPage = i;
+                book_V.ux_label.Text = book_M.book.Pages[book_M.book.CurrentPage];
+            }
+            else MessageBox.Show("You're trying to enter the void, turn back");
+            
         }
     }
 }
