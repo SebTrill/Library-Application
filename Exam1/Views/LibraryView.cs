@@ -37,15 +37,8 @@ namespace Exam1
             InitializeComponent();
             LibControl = c;
             ux_listBox.DataSource = CurrentLibrary;
-        }
-
-        /// <summary>
-        /// This picks the book from the current library.
-        /// </summary>
-        /// <returns>Returns the book from the library.</returns>
-        public Book PickBook()
-        {
-            return new Book();
+            BindingList<BookModel> list = c.ReadFile();
+            CurrentLibrary = list;
         }
 
         /// <summary>

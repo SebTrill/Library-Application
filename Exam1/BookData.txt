@@ -1,0 +1,8 @@
+﻿Book 1,false,1:3:4
+This is Book 1|Page 1 isn't very interesting.|What did you expect from page 2.|Seriously, at this point you are just wanting to be dissapointed.|Why are you still here?|Bruh, I'm done.
+
+Book 2,true,2:3:5:7
+Wow..., Book 2, sooooooo interesting.|NOT!|Who writes books? This is really boring|Nothing to see here|Other than my horrible writing.|Lmao, if you are still reading then I don't know what to tell you.|Bye.
+
+Book 3, true,1:2:3:5:7
+This is the interesting book!|*SUPER INTERESTING CONTENT*|See, I didn't lie to you.|Here is some more interesting content.|*SUPER INTERESTING CONTENT v2*|WOW, that was really interesting. Right?|If you said no, you should probably close the book.|...|If you said yes, you get some secret content.|*SUPER SECRET INTERESTING CONTENT*

@@ -23,9 +23,10 @@ namespace Exam1
         /// <summary>
         /// This is the Book constructor.
         /// </summary>
-        public Book(List<string> strings)
+        public Book(List<string> strings, string title)
         {
             Pages = strings;
+            Title = title;
         }
     }
 }

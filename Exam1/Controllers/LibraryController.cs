@@ -1,6 +1,7 @@
 ﻿using Exam1.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,6 +40,39 @@ namespace Exam1.Controllers
             this.libView = new LibraryView(this);
         }
 
+        public BindingList<BookModel> ReadFile()
+        {
+            BindingList<BookModel> bList = new BindingList<BookModel>();
+
+            if (File.Exists("BookData.txt"))
+            {
+                StreamReader sr = new StreamReader("BookData.txt");
+                while (!sr.EndOfStream)
+                {
+                    string[] bookData = sr.ReadLine().Split(',');
+                    string[] bookContent = sr.ReadLine().Split('|');
+                    string empty = sr.ReadLine();
+
+                    string title = bookData[0];
+                    bool synced;
+                    if (bookData[1] == "true") synced = true;
+                    else synced = false;
+                    string[] bookmarks = bookData[2].Split(':');
+
+                    List<string> contentList = new List<string>();
+                    foreach (string s in bookContent) contentList.Add(s);
+
+                    Book b = new Book(contentList, title);
+                    BookModel bookM = new BookModel(b, synced);
+
+                    bList.Add(bookM);
+                }
+                sr.Close();
+            }
+
+            return bList;
+        }
+
         /// <summary>
         /// This sets the constructor.
         /// </summary>
@@ -55,8 +89,8 @@ namespace Exam1.Controllers
         /// <param name="page">The page to open the book to.</param>
         public void OpenBook(Book b, int page)
         {
-            BookController c = new BookController(new BookModel(b));
-            BookView v = new BookView(new BookModel(b), c);
+            BookController c = new BookController(new BookModel(b, true));
+            BookView v = new BookView(new BookModel(b, true), c);
             c.SetConstructor(v);
         }
 
