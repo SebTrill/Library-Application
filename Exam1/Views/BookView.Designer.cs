@@ -40,9 +40,10 @@
             // next_button
             // 
             this.next_button.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.next_button.Location = new System.Drawing.Point(1160, 1110);
+            this.next_button.Location = new System.Drawing.Point(478, 406);
+            this.next_button.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.next_button.Name = "next_button";
-            this.next_button.Size = new System.Drawing.Size(258, 123);
+            this.next_button.Size = new System.Drawing.Size(106, 45);
             this.next_button.TabIndex = 1;
             this.next_button.Text = "Next";
             this.next_button.UseVisualStyleBackColor = true;
@@ -51,9 +52,10 @@
             // previous_button
             // 
             this.previous_button.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.previous_button.Location = new System.Drawing.Point(23, 1110);
+            this.previous_button.Location = new System.Drawing.Point(9, 406);
+            this.previous_button.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.previous_button.Name = "previous_button";
-            this.previous_button.Size = new System.Drawing.Size(258, 123);
+            this.previous_button.Size = new System.Drawing.Size(106, 45);
             this.previous_button.TabIndex = 2;
             this.previous_button.Text = "Previous";
             this.previous_button.UseVisualStyleBackColor = true;
@@ -61,16 +63,18 @@
             // 
             // page_panel
             // 
-            this.page_panel.Location = new System.Drawing.Point(23, 84);
+            this.page_panel.Location = new System.Drawing.Point(9, 31);
+            this.page_panel.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.page_panel.Name = "page_panel";
-            this.page_panel.Size = new System.Drawing.Size(1395, 1005);
+            this.page_panel.Size = new System.Drawing.Size(574, 368);
             this.page_panel.TabIndex = 3;
             // 
             // set_bookmark
             // 
-            this.set_bookmark.Location = new System.Drawing.Point(1077, 12);
+            this.set_bookmark.Location = new System.Drawing.Point(443, 4);
+            this.set_bookmark.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.set_bookmark.Name = "set_bookmark";
-            this.set_bookmark.Size = new System.Drawing.Size(341, 58);
+            this.set_bookmark.Size = new System.Drawing.Size(140, 21);
             this.set_bookmark.TabIndex = 4;
             this.set_bookmark.Text = "Set Bookmark";
             this.set_bookmark.UseVisualStyleBackColor = true;
@@ -78,17 +82,19 @@
             // 
             // change_page
             // 
-            this.change_page.Location = new System.Drawing.Point(23, 19);
+            this.change_page.Location = new System.Drawing.Point(9, 7);
+            this.change_page.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.change_page.Name = "change_page";
-            this.change_page.Size = new System.Drawing.Size(146, 47);
+            this.change_page.Size = new System.Drawing.Size(60, 23);
             this.change_page.TabIndex = 5;
             this.change_page.ValueChanged += new System.EventHandler(this.change_page_ValueChanged);
             // 
             // back_button
             // 
-            this.back_button.Location = new System.Drawing.Point(613, 1175);
+            this.back_button.Location = new System.Drawing.Point(252, 430);
+            this.back_button.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.back_button.Name = "back_button";
-            this.back_button.Size = new System.Drawing.Size(188, 58);
+            this.back_button.Size = new System.Drawing.Size(77, 21);
             this.back_button.TabIndex = 6;
             this.back_button.Text = "Close Book";
             this.back_button.UseVisualStyleBackColor = true;
@@ -96,15 +102,16 @@
             // 
             // BookView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1439, 1255);
+            this.ClientSize = new System.Drawing.Size(597, 487);
             this.Controls.Add(this.back_button);
             this.Controls.Add(this.change_page);
             this.Controls.Add(this.set_bookmark);
             this.Controls.Add(this.page_panel);
             this.Controls.Add(this.previous_button);
             this.Controls.Add(this.next_button);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "BookView";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.change_page)).EndInit();
