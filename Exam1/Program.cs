@@ -16,7 +16,7 @@ namespace Exam1
             ApplicationConfiguration.Initialize();
 
             LibraryController c = new LibraryController(new LibraryModel());
-            LibraryView v = new LibraryView(c);
+            LibraryView v = new LibraryView(c.SyncLibrary);
             c.SetConstructor(v);
 
             Application.Run(v);
