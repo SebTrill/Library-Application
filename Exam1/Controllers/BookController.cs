@@ -1,4 +1,5 @@
-﻿using Exam1.Objects;
+﻿using Exam1.Models;
+using Exam1.Objects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +13,12 @@ namespace Exam1
         /// <summary>
         /// This is the BookView reference.
         /// </summary>
-        public BookView book_V;
+        private BookView book_V;
 
         /// <summary>
         /// This is the Book class reference (AKA the Book Model).
         /// </summary>
-        public Book book_M;
+        private BookModel book_M;
 
         /// <summary>
         /// This is the list integers that represent the bookmarks (page numbers).
@@ -34,10 +35,15 @@ namespace Exam1
         /// </summary>
         /// <param name="v">This is the BookView reference.</param>
         /// <param name="b">This is the Book reference.</param>
-        public BookController(BookView v, Book b)
+        public BookController(BookView v, BookModel b)
         {
             book_V = v;
             book_M = b;
+        }
+
+        public void SetConstructor(BookView bv)
+        {
+            book_V = bv;
         }
 
         /// <summary>
@@ -63,7 +69,15 @@ namespace Exam1
         /// <returns>Return if a bookmark can or can't be created.</returns>
         public bool SetBookMark(int i)
         {
-            return false;
+            if(Bookmarks.Count() < 6)
+            {
+                Bookmarks.Add(i);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
