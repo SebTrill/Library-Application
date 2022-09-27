@@ -64,6 +64,7 @@ namespace Exam1
         private void synchronize_button_Click(object sender, EventArgs e)
         {
             SyncDel(CurrentLibrary);
+            ux_listBox.DataSource = titleList;
         }
     }
 }

@@ -106,6 +106,9 @@ namespace Exam1.Controllers
         public void SyncLibrary(BindingList<BookModel> listBooks)
         {
             foreach (BookModel b in listBooks) if (b.Synced == false) b.Synced = true;
+            List<string> list = new();
+            foreach (BookModel b in listBooks) if (b.Synced == true) list.Add(b.book.Title);
+            libView.titleList = list;
         }
     }
 }
