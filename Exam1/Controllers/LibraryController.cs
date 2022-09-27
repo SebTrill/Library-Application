@@ -34,10 +34,20 @@ namespace Exam1.Controllers
         /// </summary>
         /// <param name="libView">This is the LibraryView reference.</param>
         /// <param name="libModel">This is the LibraryModel reference.</param>
-        public LibraryController(LibraryView libView, LibraryModel libModel)
+        public LibraryController(LibraryModel libModel)
         {
-            this.libView = libView;
+            // this.libView = libView;
             this.libModel = libModel;
+            this.libView = new LibraryView(this);
+        }
+
+        /// <summary>
+        /// This sets the constructor.
+        /// </summary>
+        /// <param name="libView">This is the reference to the Library View.</param>
+        public void SetConstructor(LibraryView lv)
+        {
+            libView = lv;
         }
 
         /// <summary>
