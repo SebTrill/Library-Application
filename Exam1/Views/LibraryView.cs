@@ -44,7 +44,7 @@ namespace Exam1
         /// <returns>Returns the book from the library.</returns>
         public Book PickBook()
         {
-            return new Book();
+            return new Book(new List<string>());
         }
 
         /// <summary>
